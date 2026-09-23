@@ -1,11 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing Deploy PJJ - 2</title>
+    <title>Sistem Dalam Pemeliharaan | PJJ</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <h1>Testing Deploy PJJ - 2</h1>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-indigo-500 selection:text-white relative">
+
+    <!-- Background Glow Effects -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-[128px] animate-pulse-slow"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-purple-600/20 rounded-full blur-[128px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/15 rounded-full blur-[128px]"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    </div>
+
+    <!-- Top Navbar -->
+    <header class="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                <i class="fa-solid fa-server text-white text-lg"></i>
+            </div>
+            <span class="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">PJJ Platform</span>
+        </div>
+        
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs text-amber-400 font-medium shadow-inner">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+            <span>Status: Maintenance</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 flex-1 flex items-center justify-center px-6 py-12">
+        <div class="max-w-3xl w-full text-center">
+            
+            <!-- Animated Icon Graphic -->
+            <div class="relative w-32 h-32 mx-auto mb-8 flex items-center justify-center">
+                <!-- Rotating outer ring -->
+                <div class="absolute inset-0 rounded-full border-2 border-dashed border-indigo-500/40 animate-spin-slow"></div>
+                <!-- Glowing backdrop -->
+                <div class="absolute inset-2 rounded-full bg-indigo-500/10 backdrop-blur-md border border-indigo-500/20 shadow-inner"></div>
+                <!-- Main floating gear icon -->
+                <div class="relative z-10 text-5xl text-indigo-400 animate-float">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <div class="absolute -bottom-1 -right-1 w-9 h-9 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-amber-400 text-sm shadow-md">
+                    <i class="fa-solid fa-gear animate-spin"></i>
+                </div>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-4 uppercase tracking-wider">
+                <i class="fa-solid fa-triangle-exclamation"></i> Pemeliharaan Terjadwal
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Kami Sedang Meningkatkan <br class="hidden sm:inline">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Kinerja Layanan Kami</span>
+            </h1>
+            
+            <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                Sistem PJJ sedang dalam proses pemeliharaan rutin untuk meningkatkan keamanan dan kecepatan platform. Kami akan segera kembali online!
+            </p>
+
+            <!-- Status Card -->
+            <div class="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl mb-10 text-left max-w-xl mx-auto">
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-sm font-semibold text-slate-300">Kemajuan Pemeliharaan</span>
+                    <span class="text-sm font-bold text-indigo-400">75% Selesai</span>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden mb-6 p-0.5 border border-slate-700/50">
+                    <div class="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full w-[75%] transition-all duration-1000 shadow-lg shadow-indigo-500/50"></div>
+                </div>
+
+                <!-- Task Checklist -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm">
+                    <div class="flex items-center gap-2.5 text-slate-300">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                        <span>Pembaruan Server Base</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-slate-300">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                        <span>Optimalisasi Database</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-slate-300">
+                        <i class="fa-solid fa-spinner text-indigo-400 animate-spin"></i>
+                        <span>Peningkatan Keamanan</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-slate-500">
+                        <i class="fa-regular fa-circle"></i>
+                        <span>Pengujian Akhir</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Notification Form -->
+            <div class="max-w-md mx-auto mb-8">
+                <p class="text-xs text-slate-400 mb-3">Dapatkan pemberitahuan langsung saat kami kembali online:</p>
+                <form id="notify-form" onsubmit="event.preventDefault(); handleNotify();" class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" required placeholder="Masukkan email Anda..." class="flex-1 bg-slate-900 border border-slate-700/80 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 text-slate-200 placeholder-slate-500 text-sm rounded-xl px-4 py-3 outline-none transition-all">
+                    <button type="submit" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold text-sm rounded-xl px-6 py-3 transition-all duration-200 shadow-lg shadow-indigo-500/25 active:scale-95 flex items-center justify-center gap-2 whitespace-nowrap">
+                        <span>Beri Tahu Saya</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </form>
+                <div id="notify-success" class="hidden mt-3 p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 text-xs">
+                    <i class="fa-solid fa-check-circle mr-1"></i> Terima kasih! Kami akan memberi tahu Anda setelah sistem siap.
+                </div>
+            </div>
+
+            <!-- Estimated Time -->
+            <p class="text-xs text-slate-500">
+                Perkiraan waktu kembali: <span class="text-slate-300 font-medium">Hari ini pukul 22:00 WIB</span>
+            </p>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-slate-900 py-6 px-6 text-center text-xs text-slate-600">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 PJJ Platform. Seluruh hak cipta dilindungi.</p>
+            <div class="flex items-center gap-4 text-slate-400">
+                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-github text-base"></i></a>
+                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-twitter text-base"></i></a>
+                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-solid fa-envelope text-base"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        function handleNotify() {
+            const form = document.getElementById('notify-form');
+            const successMsg = document.getElementById('notify-success');
+            form.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+        }
+    </script>
 </body>
-</html>
+</html>
